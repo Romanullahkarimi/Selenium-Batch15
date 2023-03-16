@@ -44,6 +44,9 @@ public class dynamicTable2 {
                 System.out.println("money is in the table on index"+(i+2));
                 driver.findElement(By.xpath("//table[@class='SampleTable']/tbody/tr["+(i+2)+"]/td[1]")).click();
 
+
+                }
+
             }
 
 
@@ -54,4 +57,3 @@ public class dynamicTable2 {
 
 
     }
-}

@@ -2,7 +2,10 @@ package class08.Homework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class task1 {
     public static void main(String[] args) {
@@ -28,8 +31,20 @@ public class task1 {
         driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("Admin");
         driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("Hum@nhrm123");
         driver.findElement(By.xpath("//input[@id='btnLogin']")).click();
-
         driver.findElement(By.xpath("//b[text()='PIM']")).click();
+
+
+        List<WebElement> list=driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]"));
+        for (int j = 0; j <list.size() ; j++) {
+            String ID=list.get(j).getText();
+            if (ID.equalsIgnoreCase("51852A")){
+                System.out.println(ID);
+               System.out.println("ID is "+(j+1));
+            WebElement btn=  driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr["+(j+1)+"]/td[1]/input"));btn.click();
+                System.out.println(btn.isSelected());
+
+            }
+            }
 
 
     }
