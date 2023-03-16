@@ -1,4 +1,4 @@
-package homework;
+package class06.HW;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
